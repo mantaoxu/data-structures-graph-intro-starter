@@ -1,11 +1,15 @@
 
 class Graph {
   constructor() {
-    // Code goes here ...
+    this.adjList = {};
+    
   }
 
   addVertex(vertex) {
-    // Code goes here ...
+    if(!this.adjList[vertex]) {
+      this.adjList[vertex] = [];
+    }
+    
   }
 
   addEdges(srcValue, destValue) {
