@@ -22,12 +22,25 @@ class Graph {
 
   }
 
-  buildGraph(edges) {
+  buildGraph(edgeList) {
     // Code goes here ...
+
+    edgeList.forEach((edge) => {
+
+      if(edge.length === 1){
+        this.addVertex(edge[0])
+      } else{
+      this.addEdges(edge[0], edge[1])
+      }
+    })
+
+    return this.adjList
+
   }
 
   breadthFirstTraversal(startingVertex) {
     // Code goes here ...
+
   }
 
   depthFirstTraversalIterative(startingVertex) {
