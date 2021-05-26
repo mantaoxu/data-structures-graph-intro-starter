@@ -51,8 +51,8 @@ class Graph {
 
   depthFirstTraversalIterative(startingVertex) {
     // Code goes here ...
-    let finalArr = [];
     let stack= [startingVertex];
+    let finalArr = [];
     let visited = {};
     visited[startingVertex] = true;
     let currVertex;
@@ -61,7 +61,7 @@ class Graph {
       finalArr.push(currVertex);
       this.adjList[currVertex].forEach(neighbor =>{
         if(!visited[neighbor]){
-          visted[neighbor] = true;
+          visited[neighbor] = true;
           stack.push(neighbor);
         }
       })
@@ -71,13 +71,17 @@ class Graph {
 
   depthFirstTraversalRecursive(startingVertex, visited = new Set(), vertices = []) {
     // Code goes here ...
-    if(visited.has(startingVertex)) return;
-    visited.add(startingVertex);
+    // if(visited.has(startingVertex)) return;
+    // visited.add(startingVertex);
     // vertices.push(startingVertex);
-    vertices[startingVertex].forEach(neighbor => {
-      this.depthFirstTraversalIterative(neighbor, visited, vertices)
-    })
-    return vertices
+    // this.adjList[startingVertex].forEach((neighbor) => {
+    //   this.depthFirstTraversalIterative(neighbor, visited, vertices)
+    // })
+    // return vertices
+
+    const adjList = this.adjList;
+    // const visited = {};
+    this.depthFirstTraversalRecursive()
   }
 
 }
